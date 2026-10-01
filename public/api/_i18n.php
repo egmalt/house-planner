@@ -6,7 +6,7 @@ function ui_lang(): string
     if ($lang !== null) {
         return $lang;
     }
-    $cookie = $_COOKIE['lang'] ?? '';
+    $cookie = $_COOKIE['house-lang'] ?? '';
     if ($cookie === 'en' || $cookie === 'ru') {
         return $lang = $cookie;
     }

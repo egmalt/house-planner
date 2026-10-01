@@ -8,7 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
-- The UI defaults to English; the browser language is no longer used. Russian is picked only explicitly via "⋯" → Language or `?lang=ru`. PHP messages follow the `lang` cookie, otherwise English.
+- The UI defaults to English; the browser and system languages are no longer used. Russian is picked only explicitly via "⋯" → Language or `?lang=ru`; the choice is stored under `house-lang` (localStorage and cookie), old auto-cached `lang` / `i18nextLng` values are discarded. PHP messages follow the `house-lang` cookie, otherwise English.
+- The tab title follows the language and the section ("House Planner — Plan"); `index.html` ships English description, Open Graph and Twitter card tags with `og.png`, and they are switched to the chosen language at runtime.
+- "Plot & house" data can be localized: `public/data/house.<lang>.json` is loaded when present, with `house.json` as the fallback; a Russian `house.ru.json` for the demo is included.
 
 ## [0.1.0] - 2026-10-01
 

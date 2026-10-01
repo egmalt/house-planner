@@ -6,7 +6,14 @@ import { fmtDate } from './util'
 import type { Block, HouseData } from './types'
 import './info.css'
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/house.json`
+const dataUrl = (lng: string) => `${import.meta.env.BASE_URL}data/house${lng === 'en' ? '' : `.${lng}`}.json`
+
+const loadData = async (lng: string): Promise<HouseData> => {
+  let r = await fetch(dataUrl(lng), { cache: 'no-cache' })
+  if (r.status === 404 && lng !== 'en') r = await fetch(dataUrl('en'), { cache: 'no-cache' })
+  if (!r.ok) throw new Error(`HTTP ${r.status}`)
+  return r.json() as Promise<HouseData>
+}
 
 const pairs = (blocks: Block[]) =>
   blocks.map((b, i) => {
@@ -16,24 +23,25 @@ const pairs = (blocks: Block[]) =>
   })
 
 export default function InfoPage() {
-  const { t } = useTranslation('info')
+  const { t, i18n } = useTranslation('info')
+  const lng = i18n.resolvedLanguage === 'ru' ? 'ru' : 'en'
   const [data, setData] = useState<HouseData | null>(null)
   const [error, setError] = useState<string | null>(null)
   const refs = useRef<Record<string, HTMLElement | null>>({})
 
   useEffect(() => {
     let alive = true
-    fetch(DATA_URL, { cache: 'no-cache' })
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`)
-        return r.json() as Promise<HouseData>
+    loadData(lng)
+      .then((d) => {
+        if (!alive) return
+        setData(d)
+        setError(null)
       })
-      .then((d) => alive && setData(d))
       .catch((e: unknown) => alive && setError(t('loadError', { error: e instanceof Error ? e.message : String(e) })))
     return () => {
       alive = false
     }
-  }, [])
+  }, [lng])
 
   if (error) return <div className="info"><div className="info-note info-note--warn">{error}</div></div>
   if (!data) return <div className="info"><div className="info-loading">{t('loading')}</div></div>

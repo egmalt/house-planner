@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "House Planner"
+    "title": "House Planner",
+    "description": "Self-hosted house planner: true-scale 2D floor plan, 3D preview, satellite map, utility networks and a priced bill of materials."
   },
   "units": {
     "mm": "mm",

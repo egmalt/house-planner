@@ -1,6 +1,7 @@
 import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
+import { sections } from '../ui/useSection'
 
 export const LANGUAGES = ['en', 'ru'] as const
 export type Lang = (typeof LANGUAGES)[number]
@@ -29,8 +30,19 @@ for (const [path, data] of Object.entries(files)) {
   byNs[ns] = merge(byNs[ns] ?? {}, data)
 }
 
+const STORE_KEY = 'house-lang'
+const CACHES = ['localStorage', 'cookie']
+
+try {
+  localStorage.removeItem('lang')
+  localStorage.removeItem('i18nextLng')
+} catch {}
+for (const name of ['lang', 'i18nextLng']) document.cookie = `${name}=; max-age=0; path=/`
+
+const detector = new LanguageDetector()
+
 void i18n
-  .use(LanguageDetector)
+  .use(detector)
   .use(initReactI18next)
   .init({
     resources,
@@ -48,22 +60,46 @@ void i18n
     detection: {
       order: ['querystring', 'localStorage', 'cookie'],
       lookupQuerystring: 'lang',
-      lookupLocalStorage: 'lang',
-      lookupCookie: 'lang',
-      caches: ['localStorage', 'cookie'],
+      lookupLocalStorage: STORE_KEY,
+      lookupCookie: STORE_KEY,
+      caches: [],
+      cookieMinutes: 60 * 24 * 365,
     },
   })
 
-const syncDocument = (lng: string) => {
+const remember = (lng: string) => detector.cacheUserLanguage(lng, CACHES)
+
+const fromQuery = new URLSearchParams(window.location.search).get('lang')
+if (fromQuery && (LANGUAGES as readonly string[]).includes(fromQuery)) remember(fromQuery)
+
+const setMeta = (selector: string, content: string) => document.querySelector(selector)?.setAttribute('content', content)
+
+const syncDocument = () => {
+  const lng = i18n.resolvedLanguage === 'ru' ? 'ru' : 'en'
+  const app = i18n.t('common:app.title')
+  const id = window.location.hash.replace(/^#\/?/, '')
+  const section = sections.find((s) => s.id === id) ?? sections[0]
+  const title = `${app} — ${i18n.t(`common:${section.label}`)}`
+  const description = i18n.t('common:app.description')
   document.documentElement.lang = lng
-  document.title = i18n.t('common:app.title')
+  document.title = title
+  setMeta('meta[name="description"]', description)
+  setMeta('meta[property="og:title"]', title)
+  setMeta('meta[property="og:description"]', description)
+  setMeta('meta[property="og:locale"]', lng === 'ru' ? 'ru_RU' : 'en_US')
+  setMeta('meta[name="twitter:title"]', title)
+  setMeta('meta[name="twitter:description"]', description)
 }
-syncDocument(i18n.resolvedLanguage ?? 'en')
+syncDocument()
 i18n.on('languageChanged', syncDocument)
+window.addEventListener('hashchange', syncDocument)
 
 export const lang = (): Lang => (i18n.resolvedLanguage === 'ru' ? 'ru' : 'en')
 export const locale = () => (lang() === 'ru' ? 'ru-RU' : 'en-US')
-export const setLang = (lng: Lang) => i18n.changeLanguage(lng)
+export const setLang = (lng: Lang) => {
+  remember(lng)
+  return i18n.changeLanguage(lng)
+}
 
 const formats = new Map<string, Intl.NumberFormat>()
 export const numberFormat = (opts: Intl.NumberFormatOptions = {}) => {
