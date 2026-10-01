@@ -1,0 +1,46 @@
+{
+  "attribution": "Imagery © Esri, Vantor, Earthstar Geographics",
+  "orientation": { "plan": "Plan up", "north": "North up" },
+  "legend": {
+    "title": "Legend",
+    "site": "Site (plan boundary)",
+    "neighbor": "Adjacent plots from data/parcel.geojson",
+    "street": "Street side",
+    "walls": "House walls"
+  },
+  "panel": {
+    "eyebrow": "Map",
+    "titleAlign": "Imagery alignment",
+    "titlePlan": "Plan on imagery",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "opacity": "Plan opacity",
+    "done": "Done",
+    "align": "Align imagery",
+    "toSite": "Go to site",
+    "notBound": "The plan isn't georeferenced: set geo via “Boundary from GeoJSON”.",
+    "alignHint": "The cadastre and the plan stay in place, the imagery moves. “0” — match the plan origin with its place on the imagery, “X” — rotate along the X axis.",
+    "reset": "Reset",
+    "imagery": "imagery: E {{e}} m · N {{n}} m · {{rot}}°",
+    "copied": "Copied",
+    "copy": "Copy"
+  },
+  "geojson": {
+    "summary": "Boundary from GeoJSON",
+    "autoGeo": "Compute geo from polygon",
+    "startVertex": "Origin at vertex No.",
+    "convert": "Recalculate",
+    "apply": "Apply to plan",
+    "result_one": "{{count}} vertex · {{w}} × {{d}} m · {{area}} m² · rotation {{rot}}°",
+    "result_other": "{{count}} vertices · {{w}} × {{d}} m · {{area}} m² · rotation {{rot}}°",
+    "notBound": "The plan isn't georeferenced: enable “Compute geo from polygon”",
+    "noPolygon": "No polygon in the GeoJSON",
+    "tooFewVertices": "The polygon has fewer than three vertices"
+  },
+  "underlay": {
+    "ccw1": "Rotate imagery counterclockwise by 1°",
+    "ccw01": "Rotate imagery counterclockwise by 0.1°",
+    "cw01": "Rotate imagery clockwise by 0.1°",
+    "cw1": "Rotate imagery clockwise by 1°"
+  }
+}

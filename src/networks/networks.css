@@ -1,0 +1,147 @@
+.net-layers {
+  position: fixed;
+  z-index: var(--z-popover);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 220px;
+  max-width: 280px;
+  max-height: calc(100vh - 16px);
+  overflow: auto;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.net-layers__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: var(--control-h-sm);
+}
+
+.net-layers__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.net-layers__lock {
+  color: var(--muted);
+}
+
+.net-layers__lock--on,
+.net-layers__edit--on {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.net-layers__note {
+  font-size: var(--text-xs);
+}
+
+.net-editbar {
+  position: fixed;
+  top: calc(var(--chrome-top) + var(--ruler));
+  left: 124px;
+  z-index: var(--z-popover);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: calc(100vw - 124px - 340px);
+  padding: 6px 8px 6px 14px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  white-space: nowrap;
+}
+
+.net-editbar__title {
+  font-weight: 650;
+}
+
+.net-editbar__hint {
+  font-size: var(--text-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.net-props__pair {
+  display: contents;
+}
+
+.net-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.net-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-2);
+  align-items: baseline;
+  padding: 6px 0;
+  font-size: var(--text-sm);
+  border-bottom: 1px solid var(--line);
+}
+
+.net-item__name a {
+  color: inherit;
+}
+
+.net-item__from {
+  font-size: var(--text-xs);
+}
+
+.net-item__qty,
+.net-item__sum {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.net-item__sum {
+  min-width: 76px;
+}
+
+.net-warnings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-2);
+}
+
+.net-warnings .layout-hint {
+  margin-top: 0;
+}
+
+.net-warning {
+  width: 100%;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tool[aria-disabled='true'] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.tool[aria-disabled='true']:hover {
+  background: transparent;
+}
+
+.inspector__tabs .segmented {
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  height: auto;
+  min-width: 0;
+}
+
+.inspector__tabs .segmented__item {
+  min-height: 24px;
+  white-space: nowrap;
+}

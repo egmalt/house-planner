@@ -1,0 +1,111 @@
+.view3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.view3d canvas {
+  display: block;
+  touch-action: none;
+}
+
+.view3d__label {
+  padding: 0 var(--space-1) 0 var(--space-2);
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.view3d__error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+  background: var(--bg);
+}
+
+.view3d__error-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  max-width: 420px;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+.view3d__error-card p {
+  margin: 0;
+}
+
+.view3d__bar {
+  max-width: calc(100% - 24px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.view3d__bar::-webkit-scrollbar {
+  display: none;
+}
+
+.view3d__bar > * {
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .view3d__finish {
+    top: calc(var(--chrome-top) + 52px);
+    right: auto;
+    left: var(--chrome-left, 12px);
+  }
+}
+
+.view3d__colors {
+  top: calc(var(--chrome-top) + 52px);
+}
+
+.view3d__swatch {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+.view3d__swatches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.view3d__swatch-item .menu__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.view3d__swatch-item--active {
+  background: var(--accent-soft);
+}
+
+.view3d__swatch-name {
+  overflow: hidden;
+  font-size: var(--text-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.view3d__preset {
+  display: inline-flex;
+  gap: 3px;
+}
+
+@media (max-width: 900px) {
+  .view3d__colors {
+    top: calc(var(--chrome-top) + 104px);
+    right: auto;
+    left: var(--chrome-left, 12px);
+  }
+}

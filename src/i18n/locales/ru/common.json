@@ -1,0 +1,173 @@
+{
+  "app": {
+    "title": "Планировщик дома"
+  },
+  "units": {
+    "mm": "мм",
+    "cm": "см",
+    "m": "м",
+    "m2": "м²",
+    "m3": "м³",
+    "pcs": "шт",
+    "rub": "₽",
+    "kw": "кВт",
+    "w": "Вт",
+    "deg": "°",
+    "roll": "рул",
+    "coil": "бухта",
+    "pack": "упак",
+    "kg": "кг",
+    "l": "л",
+    "set": "компл.",
+    "sheet": "лист",
+    "kit": "домокомплект"
+  },
+  "language": {
+    "label": "Язык",
+    "en": "English",
+    "ru": "Русский"
+  },
+  "sections": {
+    "plan": "План",
+    "3d": "3D",
+    "map": "Карта",
+    "estimate": "Смета",
+    "info": "Участок и дом",
+    "infoShort": "Участок"
+  },
+  "loading": {
+    "3d": "Загружаю 3D…",
+    "map": "Загружаю карту…",
+    "estimate": "Загружаю смету…",
+    "generic": "Загружаю…",
+    "plan": "Загружаю план…"
+  },
+  "status": {
+    "cursor": "x {{x}} м · y {{y}} м",
+    "cursorEmpty": "x — · y —",
+    "hintWall": "Клик — точка, Shift — угол 45°, Esc/правый клик — закончить",
+    "hintDoor": "Наведи на стену и кликни, чтобы поставить дверь · Esc — выйти",
+    "hintWindow": "Наведи на стену и кликни, чтобы поставить окно · Esc — выйти",
+    "hintSelect": "Тяни концы и середину стены · Alt — оторвать · Shift — 45° · ⌘Z — отмена"
+  },
+  "header": {
+    "subtitle": "участок {{width}} × {{depth}} м · {{walls}} · {{openings}}",
+    "walls_one": "{{count}} стена",
+    "walls_few": "{{count}} стены",
+    "walls_many": "{{count}} стен",
+    "walls_other": "{{count}} стен",
+    "openings_one": "{{count}} проём",
+    "openings_few": "{{count}} проёма",
+    "openings_many": "{{count}} проёмов",
+    "openings_other": "{{count}} проёмов",
+    "loadingPlan": "Загрузка плана…",
+    "viewOnly": "Просмотр"
+  },
+  "grid": {
+    "title": "Размер клеток сетки при текущем масштабе",
+    "legend": "Клетка {{minor}} · крупная {{major}}"
+  },
+  "preview": {
+    "label": "Просмотр версии <strong>{{label}}</strong> — только чтение",
+    "back": "Вернуться",
+    "restore": "Восстановить эту",
+    "confirm": "Восстановить версию {{label}}? Она запишется новой ревизией, история не теряется."
+  },
+  "save": {
+    "saving": "Сохраняю…",
+    "offline": "Нет связи с сервером · повторить",
+    "saved": "Сохранено",
+    "savedAt": "Сохранено · {{time}}"
+  },
+  "login": {
+    "loading": "Загружаю план с сервера…",
+    "offlineTitle": "Нет связи с сервером",
+    "offlineText": "План хранится только на сервере, без связи редактор не открывается.",
+    "retry": "Повторить",
+    "password": "Пароль",
+    "checking": "Проверяю…",
+    "signIn": "Войти"
+  },
+  "menu": {
+    "more": "Ещё",
+    "plan": "План",
+    "exportJson": "Экспорт JSON",
+    "importJson": "Импорт JSON",
+    "versions": "Версии",
+    "importInvalid": "План не прошёл проверку:\n\n{{error}}"
+  },
+  "versions": {
+    "saved": "Сохранённые",
+    "all": "Все изменения",
+    "defaultName": "Версия {{date}}",
+    "snapshot": "снимок",
+    "saveVersion": "Сохранить версию…",
+    "save": "Сохранить",
+    "loading": "Загружаю…",
+    "empty": "Сохранённых версий пока нет",
+    "open": "Открыть",
+    "restore": "Восстановить",
+    "current": "текущая",
+    "walls_one": "{{count}} стена",
+    "walls_few": "{{count}} стены",
+    "walls_many": "{{count}} стен",
+    "walls_other": "{{count}} стен",
+    "confirmSnapshot": "Восстановить «{{name}}»? Она запишется новой ревизией, история не теряется.",
+    "confirmRevision": "Восстановить ревизию #{{rev}}? Она запишется новой ревизией, история не теряется.",
+    "quoted": "«{{name}}»"
+  },
+  "planFile": {
+    "notJson": "Файл не JSON: {{message}}"
+  },
+  "lengthField": {
+    "title": "мм или м: 2800, 2,8 м, 280 см"
+  },
+  "sync": {
+    "wrongPassword": "Неверный пароль",
+    "loginHttp": "Ошибка входа: HTTP {{status}}",
+    "offline": "Нет связи с сервером",
+    "cookieNotSaved": "Кука входа не сохранилась",
+    "planChanged": "План обновился, повторите действие",
+    "saveFailedReason": "Не сохранилось: {{reason}}",
+    "saveFailed": "Не сохранилось на сервере — изменение отменено",
+    "siteUpdated": "Сайт обновился — перезагружаю",
+    "invalidServerPlan": "Серверный план не прошёл проверку: {{error}}",
+    "noSnapshot": "Нет снимка {{id}}",
+    "noVersion": "Нет версии {{rev}}"
+  },
+  "canvas": {
+    "addDoor": "+ дверь",
+    "addWindow": "+ окно",
+    "defaultRoomName": "Комната",
+    "moveHouseHint": "Чтобы двигать весь дом — инструмент «Здание» (B)",
+    "noRoomOnWall": "На стене нет места",
+    "alignTitle": "Выравнивание снимка",
+    "alignHint": "тяни центр — сдвиг, ручку — поворот · Esc — готово",
+    "labelRoom": "Подписать комнату",
+    "measureSum": "Сумма: {{sum}} м",
+    "measureHint": "Клик — точка A, клик — точка B · ⌘ — цепочка · Shift — 45° · Alt — без привязки · M/Esc — очистить",
+    "groupMove": "Δx {{x}} м · Δy {{y}} м",
+    "planUp": "План вверх",
+    "northUp": "Север вверх",
+    "rotateCcw": "Повернуть на 15° против часовой",
+    "rotateCw": "Повернуть на 15° по часовой",
+    "compass": "Север · клик — план вверх",
+    "walls_one": "{{count}} стена",
+    "walls_few": "{{count}} стены",
+    "walls_many": "{{count}} стен",
+    "walls_other": "{{count}} стен",
+    "openings_one": "{{count}} проём",
+    "openings_few": "{{count}} проёма",
+    "openings_many": "{{count}} проёмов",
+    "openings_other": "{{count}} проёмов",
+    "items_one": "{{count}} предмет",
+    "items_few": "{{count}} предмета",
+    "items_many": "{{count}} предметов",
+    "items_other": "{{count}} предметов",
+    "selSummary": "{{walls}}, {{openings}}, {{items}}"
+  },
+  "demo": {
+    "long": "Демо: изменения видят все и сбрасываются каждый час — поставьте себе свою копию",
+    "short": "Демо: общий план, сброс каждый час"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "loadError": "Failed to load data: {{error}}",
+  "loading": "Loading…",
+  "updated": "updated {{date}}",
+  "sectionsNav": "Sections",
+  "collecting": "being collected",
+  "unverified": "not verified",
+  "source": "Source:",
+  "dated": "dated {{date}}",
+  "more": "More",
+  "map": {
+    "title": "Site diagram",
+    "north": "N",
+    "parcel": "site",
+    "zone": "buildable area",
+    "neighbors": "neighbors",
+    "street": "street"
+  }
+}

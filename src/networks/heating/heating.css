@@ -1,0 +1,168 @@
+.hp-summary .props {
+  margin-bottom: var(--space-2);
+}
+
+.hp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.hp-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.hp-field {
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.hp-field > span:first-child {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.hp-field .select {
+  max-width: 170px;
+}
+
+.hp-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.hp-num {
+  width: 80px;
+}
+
+.hp-text {
+  width: 150px;
+}
+
+.hp-table {
+  margin-top: var(--space-2);
+}
+
+.hp-table td {
+  vertical-align: top;
+}
+
+.hp-row {
+  cursor: pointer;
+}
+
+.hp-row:hover,
+.hp-row--active {
+  background: var(--surface-2);
+}
+
+.hp-row--off {
+  opacity: 0.5;
+}
+
+.hp-total td {
+  font-weight: 600;
+  border-top: 1px solid var(--line);
+}
+
+.hp-sub {
+  font-size: var(--text-xs);
+}
+
+.hp-bad {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.hp-ok {
+  color: var(--ink);
+}
+
+.hp-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-2);
+}
+
+.hp-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-2);
+  align-items: baseline;
+  padding: 6px 0;
+  font-size: var(--text-sm);
+  border-bottom: 1px solid var(--line);
+}
+
+.hp-item__name a {
+  color: inherit;
+}
+
+.hp-item__qty,
+.hp-item__sum {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hp-item__sum {
+  min-width: 72px;
+}
+
+.hp-warnings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-2);
+}
+
+.hp-warning {
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: var(--radius-xs);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--text-sm);
+  text-align: left;
+  cursor: pointer;
+}
+
+.hp-warning--error {
+  background: var(--danger-soft);
+}
+
+.hp-warning--warn {
+  background: var(--warn-soft);
+}
+
+.hp-warning--info {
+  background: var(--surface-2);
+  color: var(--ink-2);
+}
+
+.hp-howto summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hp-howto ol {
+  margin: var(--space-2) 0;
+  padding-left: 18px;
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+
+.hp-howto li + li {
+  margin-top: 4px;
+}
+
+.hp-howto .muted {
+  font-size: var(--text-xs);
+  line-height: 1.45;
+}

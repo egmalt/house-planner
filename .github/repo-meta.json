@@ -1,0 +1,26 @@
+{
+  "description": "Self-hosted house planner: true-scale 2D floor plan, 3D, satellite map overlay, sewer, electrical, water and underfloor heating with calculations, priced bill of materials. React + PHP, no database. By the team behind homedesignsai.pro",
+  "homepage": "https://homedesignsai.pro",
+  "topics": [
+    "house-planner",
+    "floor-plan",
+    "floorplan-editor",
+    "home-design",
+    "architecture",
+    "3d",
+    "react",
+    "typescript",
+    "threejs",
+    "react-three-fiber",
+    "konva",
+    "maplibre",
+    "php",
+    "self-hosted",
+    "bill-of-materials",
+    "construction",
+    "electrical-design",
+    "underfloor-heating",
+    "plumbing",
+    "cad"
+  ]
+}

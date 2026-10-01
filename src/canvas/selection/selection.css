@@ -1,0 +1,30 @@
+.marquee {
+  position: absolute;
+  border: 1px dashed var(--accent);
+  background: rgba(242, 107, 29, 0.08);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.group-delta {
+  position: absolute;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  box-shadow: 0 0 0 1.5px var(--accent), var(--shadow);
+  color: var(--ink);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.group-delta--guide {
+  padding: 1px 6px;
+  font-size: 11px;
+  color: var(--accent-ink);
+  box-shadow: 0 0 0 1px var(--accent);
+  transform: translate(-50%, -50%);
+}

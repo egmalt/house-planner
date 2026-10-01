@@ -1,0 +1,19 @@
+{
+  "loadError": "Не удалось загрузить данные: {{error}}",
+  "loading": "Загрузка…",
+  "updated": "обновлено {{date}}",
+  "sectionsNav": "Разделы",
+  "collecting": "собирается",
+  "unverified": "не сверено",
+  "source": "Источник:",
+  "dated": "от {{date}}",
+  "more": "Подробнее",
+  "map": {
+    "title": "Схема участка",
+    "north": "С",
+    "parcel": "участок",
+    "zone": "где можно ставить дом",
+    "neighbors": "соседи",
+    "street": "улица"
+  }
+}

@@ -1,0 +1,81 @@
+name: docker
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    env:
+      HOUSE_PASSWORD: ci-password-123
+      HOUSE_PORT: 8080
+      BASE: http://127.0.0.1:8080
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker compose build
+
+      - name: Start
+        run: docker compose up -d
+
+      - name: Wait for the server
+        run: |
+          for i in $(seq 1 60); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$BASE/api/plan.php" || true)
+            [ "$code" = 401 ] && exit 0
+            sleep 1
+          done
+          echo "server is not ready, last code: $code"
+          exit 1
+
+      - name: Check responses
+        run: |
+          set -u
+          fail=0
+          expect() {
+            local want="$1" desc="$2"; shift 2
+            local got
+            got=$(curl -s -o /tmp/body -w '%{http_code}' "$@" || true)
+            if [ "$got" = "$want" ]; then
+              echo "ok   $want  $desc"
+            else
+              echo "FAIL $desc: expected $want, got $got"
+              head -c 500 /tmp/body; echo
+              fail=1
+            fi
+          }
+          expect 200 "GET / (app)" "$BASE/"
+          expect 401 "GET /api/plan.php without cookie" "$BASE/api/plan.php"
+          expect 200 "POST /api/login.php" -c /tmp/jar -X POST \
+            -H 'Content-Type: application/json' -H 'X-Requested-With: XMLHttpRequest' \
+            --data "{\"password\":\"$HOUSE_PASSWORD\"}" "$BASE/api/login.php"
+          if grep -q hauth /tmp/jar; then echo "ok        login cookie set"; else echo "FAIL login cookie not set"; fail=1; fi
+          expect 200 "GET /api/plan.php with cookie" -b /tmp/jar "$BASE/api/plan.php"
+          expect 401 "GET /data/house.json without cookie" "$BASE/data/house.json"
+          expect 403 "GET /api/_lib.php" "$BASE/api/_lib.php"
+          exit $fail
+
+      - name: Restart and check the plan survives
+        run: |
+          docker compose restart
+          for i in $(seq 1 60); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' -b /tmp/jar "$BASE/api/plan.php" || true)
+            [ "$code" = 200 ] && { echo "ok   200  GET /api/plan.php with cookie after restart"; exit 0; }
+            sleep 1
+          done
+          echo "FAIL after restart: expected 200, got $code"
+          exit 1
+
+      - name: Container logs
+        if: failure()
+        run: docker compose logs
+
+      - name: Stop
+        if: always()
+        run: docker compose down -v

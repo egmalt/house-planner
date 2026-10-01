@@ -1,0 +1,7 @@
+RewriteEngine On
+<FilesMatch "^_">
+Require all denied
+</FilesMatch>
+<Files ".htaccess">
+Require all denied
+</Files>

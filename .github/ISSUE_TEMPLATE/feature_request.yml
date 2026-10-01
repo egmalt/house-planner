@@ -1,0 +1,37 @@
+name: Feature request
+description: Suggest an improvement or a new capability
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Russian is fine. Check the roadmap in README and existing issues first.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do, and what gets in the way today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: "How it could work: UI, plan format fields, calculation."
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Norms and references
+      description: For calculations and checks, the norm (СП, ПУЭ, ГОСТ, СанПиН) and clause, a manufacturer's datasheet or another source.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contribution
+      options:
+        - label: I would like to implement this myself

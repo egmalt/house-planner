@@ -1,0 +1,25 @@
+{
+  "views": { "top": "Top", "front": "Front" },
+  "looks": { "model": "Mock-up", "real": "Materials" },
+  "cuts": { "full": "Full", "low": "1 m", "floor": "Floor" },
+  "finishes": { "plaster": "Plaster", "timber": "Log imitation", "planken": "Planken" },
+  "presets": {
+    "granite": "Grey granite",
+    "scandinavia": "Scandinavian",
+    "graphite": "Graphite",
+    "warm": "Warm",
+    "forest": "Forest"
+  },
+  "toolbar": {
+    "grid": "Grid",
+    "facade": "Facade",
+    "wallColor": "Wall color",
+    "accent": "Accent",
+    "presets": "Ready-made combinations"
+  },
+  "error": {
+    "eyebrow": "3D view",
+    "text": "Couldn't build 3D for this plan. The plan is unharmed, everything is still in the editor. Fix the walls or openings and come back to this tab.",
+    "retry": "Try again"
+  }
+}

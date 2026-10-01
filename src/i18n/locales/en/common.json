@@ -1,0 +1,161 @@
+{
+  "app": {
+    "title": "House Planner"
+  },
+  "units": {
+    "mm": "mm",
+    "cm": "cm",
+    "m": "m",
+    "m2": "m²",
+    "m3": "m³",
+    "pcs": "pcs",
+    "rub": "₽",
+    "kw": "kW",
+    "w": "W",
+    "deg": "°",
+    "roll": "roll",
+    "coil": "coil",
+    "pack": "pack",
+    "kg": "kg",
+    "l": "L",
+    "set": "set",
+    "sheet": "sheet",
+    "kit": "kit"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ru": "Русский"
+  },
+  "sections": {
+    "plan": "Plan",
+    "3d": "3D",
+    "map": "Map",
+    "estimate": "Estimate",
+    "info": "Plot & house",
+    "infoShort": "Plot"
+  },
+  "loading": {
+    "3d": "Loading 3D…",
+    "map": "Loading map…",
+    "estimate": "Loading estimate…",
+    "generic": "Loading…",
+    "plan": "Loading plan…"
+  },
+  "status": {
+    "cursor": "x {{x}} m · y {{y}} m",
+    "cursorEmpty": "x — · y —",
+    "hintWall": "Click — point, Shift — 45° angle, Esc/right click — finish",
+    "hintDoor": "Hover a wall and click to place a door · Esc — exit",
+    "hintWindow": "Hover a wall and click to place a window · Esc — exit",
+    "hintSelect": "Drag wall ends and middle · Alt — detach · Shift — 45° · ⌘Z — undo"
+  },
+  "header": {
+    "subtitle": "plot {{width}} × {{depth}} m · {{walls}} · {{openings}}",
+    "walls_one": "{{count}} wall",
+    "walls_other": "{{count}} walls",
+    "openings_one": "{{count}} opening",
+    "openings_other": "{{count}} openings",
+    "loadingPlan": "Loading plan…",
+    "viewOnly": "View only"
+  },
+  "grid": {
+    "title": "Grid cell size at the current zoom",
+    "legend": "Cell {{minor}} · major {{major}}"
+  },
+  "preview": {
+    "label": "Viewing version <strong>{{label}}</strong> — read only",
+    "back": "Back",
+    "restore": "Restore this one",
+    "confirm": "Restore version {{label}}? It will be saved as a new revision, history is kept."
+  },
+  "save": {
+    "saving": "Saving…",
+    "offline": "No connection to server · retry",
+    "saved": "Saved",
+    "savedAt": "Saved · {{time}}"
+  },
+  "login": {
+    "loading": "Loading plan from server…",
+    "offlineTitle": "No connection to server",
+    "offlineText": "The plan is stored only on the server; the editor can't open without a connection.",
+    "retry": "Retry",
+    "password": "Password",
+    "checking": "Checking…",
+    "signIn": "Sign in"
+  },
+  "menu": {
+    "more": "More",
+    "plan": "Plan",
+    "exportJson": "Export JSON",
+    "importJson": "Import JSON",
+    "versions": "Versions",
+    "importInvalid": "The plan failed validation:\n\n{{error}}"
+  },
+  "versions": {
+    "saved": "Saved",
+    "all": "All changes",
+    "defaultName": "Version {{date}}",
+    "snapshot": "snapshot",
+    "saveVersion": "Save version…",
+    "save": "Save",
+    "loading": "Loading…",
+    "empty": "No saved versions yet",
+    "open": "Open",
+    "restore": "Restore",
+    "current": "current",
+    "walls_one": "{{count}} wall",
+    "walls_other": "{{count}} walls",
+    "confirmSnapshot": "Restore “{{name}}”? It will be saved as a new revision, history is kept.",
+    "confirmRevision": "Restore revision #{{rev}}? It will be saved as a new revision, history is kept.",
+    "quoted": "“{{name}}”"
+  },
+  "planFile": {
+    "notJson": "File is not JSON: {{message}}"
+  },
+  "lengthField": {
+    "title": "mm or m: 2800, 2.8 m, 280 cm"
+  },
+  "sync": {
+    "wrongPassword": "Wrong password",
+    "loginHttp": "Sign-in error: HTTP {{status}}",
+    "offline": "No connection to server",
+    "cookieNotSaved": "Sign-in cookie was not saved",
+    "planChanged": "The plan was updated, please repeat the action",
+    "saveFailedReason": "Not saved: {{reason}}",
+    "saveFailed": "Not saved on the server — change reverted",
+    "siteUpdated": "The site was updated — reloading",
+    "invalidServerPlan": "Server plan failed validation: {{error}}",
+    "noSnapshot": "No snapshot {{id}}",
+    "noVersion": "No version {{rev}}"
+  },
+  "canvas": {
+    "addDoor": "+ door",
+    "addWindow": "+ window",
+    "defaultRoomName": "Room",
+    "moveHouseHint": "To move the whole house, use the “Building” tool (B)",
+    "noRoomOnWall": "No room on the wall",
+    "alignTitle": "Aligning the image",
+    "alignHint": "drag center — move, handle — rotate · Esc — done",
+    "labelRoom": "Label room",
+    "measureSum": "Total: {{sum}} m",
+    "measureHint": "Click — point A, click — point B · ⌘ — chain · Shift — 45° · Alt — no snapping · M/Esc — clear",
+    "groupMove": "Δx {{x}} m · Δy {{y}} m",
+    "planUp": "Plan up",
+    "northUp": "North up",
+    "rotateCcw": "Rotate 15° counterclockwise",
+    "rotateCw": "Rotate 15° clockwise",
+    "compass": "North · click — plan up",
+    "walls_one": "{{count}} wall",
+    "walls_other": "{{count}} walls",
+    "openings_one": "{{count}} opening",
+    "openings_other": "{{count}} openings",
+    "items_one": "{{count}} item",
+    "items_other": "{{count}} items",
+    "selSummary": "{{walls}}, {{openings}}, {{items}}"
+  },
+  "demo": {
+    "long": "Demo: changes are visible to everyone and reset every hour — get your own copy on",
+    "short": "Demo: shared plan, resets hourly"
+  }
+}

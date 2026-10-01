@@ -1,0 +1,123 @@
+{
+ "title": "Plot & house",
+ "subtitle": "Demo plot 30 × 45 m · Lot 12, Demo Lane · fictional data",
+ "updated": "2026-10-01",
+ "sections": [
+  {
+   "id": "parcel",
+   "title": "Plot",
+   "lead": "Example plot passport. Replace it with your own data in public/data/house.json.",
+   "blocks": [
+    {
+     "type": "facts",
+     "title": "Key facts",
+     "items": [
+      { "label": "Address", "value": "Demo Lane 12", "hint": "Fictional address" },
+      { "label": "Lot", "value": "Lot 12 of a new subdivision", "hint": "Neighbours: Lot 11 and Lot 13" },
+      { "label": "Area", "value": "1350 m²", "hint": "30 × 45 m, rectangular" },
+      { "label": "Land use", "value": "Residential, one detached house" },
+      { "label": "Terrain", "value": "Flat former field, no trees or structures" },
+      { "label": "Access", "value": "From Demo Lane along the 30 m side", "hint": "Gravel road, north-east of the plot" },
+      { "label": "Utilities", "value": "Electricity at the road; water from a private borehole; sewage to an on-site treatment plant" },
+      { "label": "Location", "value": "Rural area near Kiili, Harju County, Estonia", "hint": "Used only to place the demo on satellite imagery" }
+     ]
+    },
+    {
+     "type": "map",
+     "title": "Plot layout",
+     "caption": "Top view in plan axes, street at the bottom. Building zone: 3 m from the neighbours and the rear, 5 m from the street.",
+     "north": 152,
+     "parcel": {
+      "label": "Lot 12",
+      "note": "30 × 45 m",
+      "points": [[0, 0], [30, 0], [30, 45], [0, 45]]
+     },
+     "sides": [
+      { "at": [15, 0], "len": 30, "angle": 0 },
+      { "at": [30, 22.5], "len": 45, "angle": 90 },
+      { "at": [15, 45], "len": 30, "angle": 0 },
+      { "at": [0, 22.5], "len": 45, "angle": 90 }
+     ],
+     "neighbors": [
+      { "label": "Lot 11", "note": "vacant", "points": [[-30, 0], [0, 0], [0, 45], [-30, 45]] },
+      { "label": "Lot 13", "note": "vacant", "points": [[30, 0], [60, 0], [60, 45], [30, 45]] }
+     ],
+     "zone": {
+      "label": "Building zone ≈ 888 m²",
+      "points": [[3, 3], [27, 3], [27, 40], [3, 40]]
+     },
+     "street": {
+      "label": "Demo Lane",
+      "at": [15, 50.5],
+      "angle": 0,
+      "band": [[-20, 47.5], [50, 47.5], [50, 50.5], [-20, 50.5]]
+     }
+    },
+    {
+     "type": "links",
+     "title": "Links",
+     "items": [
+      { "title": "Esri World Imagery", "url": "https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9", "note": "Satellite basemap used on the Map tab" }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "norms",
+   "title": "Setbacks and rules",
+   "lead": "Example values that the planner checks against. Local zoning and the building code always take precedence.",
+   "blocks": [
+    {
+     "type": "note",
+     "tone": "info",
+     "text": "**Check the local detailed plan first.** Setbacks, maximum footprint and height are set by the municipality for each subdivision; the numbers below are typical defaults, not legal advice."
+    },
+    {
+     "type": "facts",
+     "title": "Distances on the plot",
+     "items": [
+      { "label": "House — neighbouring boundary", "value": "3 m" },
+      { "label": "House — street boundary", "value": "5 m" },
+      { "label": "Garage, shed — boundary", "value": "1 m" },
+      { "label": "Between buildings (fire separation)", "value": "6 m", "hint": "Less is possible with fire-rated walls" },
+      { "label": "Treatment plant — house / boundary", "value": "5 m / 1 m" },
+      { "label": "Borehole — treatment plant", "value": "50 m", "hint": "15 m is the usual minimum in plant passports" },
+      { "label": "Water pipe depth", "value": "≥ 1.5 m", "hint": "Below frost depth, or with a heating cable" },
+      { "label": "Sewer pipe depth outside", "value": "≥ 1.0 m", "hint": "Shallower pipes need insulation" }
+     ]
+    },
+    {
+     "type": "table",
+     "title": "Rooms and daylight",
+     "source": "Planner check: window area ≥ 1/8 of the floor area in living rooms and bedrooms",
+     "columns": ["Room", "Floor, m²", "Windows, m²", "Ratio"],
+     "rows": [
+      ["Living / Kitchen", "38.8", "7.6", "1 : 5.1"],
+      ["Master bedroom", "15.4", "2.7", "1 : 5.7"],
+      ["Bedroom 2", "11.1", "3.5", "1 : 3.2"],
+      ["Bedroom 3", "10.3", "2.1", "1 : 4.9"]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "docs",
+   "title": "Documents",
+   "lead": "Typical paperwork for a new house; the statuses are an example.",
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      { "title": "Land registry extract", "status": "have", "note": "Owner, area and permitted use of the plot" },
+      { "title": "Detailed plan / design conditions", "status": "have", "note": "Setbacks, footprint, height, roof shape" },
+      { "title": "Topographic survey", "status": "in progress", "note": "Base for the site plan and levels" },
+      { "title": "Grid connection agreement", "status": "needed", "note": "Main fuse size, metering point at the boundary" },
+      { "title": "Borehole and treatment plant approval", "status": "needed", "note": "Positions as shown on the plan" },
+      { "title": "Building permit", "status": "later", "note": "Submitted with the main design" },
+      { "title": "Occupancy permit", "status": "later", "note": "After completion and as-built drawings" }
+     ]
+    }
+   ]
+  }
+ ]
+}

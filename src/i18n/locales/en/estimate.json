@@ -1,0 +1,109 @@
+{
+  "page": {
+    "title": "Estimate",
+    "downloadCsv": "Download CSV",
+    "newLine": "New item",
+    "newNote": "New note",
+    "addLine": "+ item",
+    "addNote": "+ note",
+    "total": "Total",
+    "notesTitle": "Order notes",
+    "noNotes": "No notes",
+    "openInStore": "Open in store",
+    "deleteLine": "Delete item",
+    "confirmDelete": "Delete “{{name}}”?",
+    "bought": "Purchased",
+    "boughtOn": "Purchased {{date}}",
+    "markBought": "Mark as purchased",
+    "delete": "Delete"
+  },
+  "columns": {
+    "n": "No.",
+    "name": "Item",
+    "qty": "Qty",
+    "unit": "Unit",
+    "price": "Price",
+    "sum": "Amount"
+  },
+  "colors": {
+    "title": "Colors (RAL)",
+    "empty": "No colors selected — set them in the 3D tab",
+    "joined": "{{a}} and {{b}}",
+    "slots": {
+      "walls": "Walls",
+      "gates": "Gates",
+      "roof": "Roof and gutters",
+      "windows": "Windows",
+      "accent": "Accent",
+      "plinth": "Plinth"
+    }
+  },
+  "csv": {
+    "fileName": "estimate-{{date}}.csv",
+    "yes": "yes",
+    "no": "no",
+    "total": "Total",
+    "sectionTotal": "Section total “{{section}}”",
+    "columns": {
+      "section": "Section",
+      "n": "No.",
+      "name": "Item",
+      "sku": "SKU",
+      "qty": "Qty",
+      "unit": "Unit",
+      "price": "Price",
+      "sum": "Amount",
+      "bought": "Purchased",
+      "url": "Link",
+      "note": "Note"
+    }
+  },
+  "sections": {
+    "manual": "Manual items",
+    "auto": "Walls, windows and doors"
+  },
+  "rows": {
+    "door": "Door {{w}}×{{h}} mm",
+    "gate": "Gate {{w}}×{{h}} mm",
+    "window": "Window {{w}}×{{h}} mm",
+    "priceBy": "price per: {{item}}",
+    "areaEstimate": "estimate by area from {{w}}×{{h}} mm: {{item}}"
+  },
+  "wallLine": {
+    "noMaterial": "Walls without material"
+  },
+  "cart": {
+    "open": "Build Petrovich cart",
+    "title": "Petrovich cart",
+    "close": "Close",
+    "demoDisabled": "The Petrovich cart is disabled in the demo — run your own copy",
+    "onlyLeft": "Only not purchased",
+    "oneLink": "One link for everything",
+    "perSection": "One link per section",
+    "building_one": "Building… {{count}} item",
+    "building_other": "Building… {{count}} items",
+    "withCode_one": "{{count}} item with a Petrovich code",
+    "withCode_other": "{{count}} items with a Petrovich code",
+    "linkCount": "{{count}} items",
+    "openLink": "Open",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "error — {{error}}. ",
+    "missing": "not found or out of stock: {{list}}",
+    "all": "Everything",
+    "outdated": "The site has been updated — reloading",
+    "cities": {
+      "spb": "Saint Petersburg",
+      "vbg": "Vyborg"
+    },
+    "sections": {
+      "house": "House",
+      "garage": "Garage",
+      "electric": "Electrical",
+      "sewer": "Sewer",
+      "water": "Water supply",
+      "heating": "Underfloor heating",
+      "other": "Other"
+    }
+  }
+}

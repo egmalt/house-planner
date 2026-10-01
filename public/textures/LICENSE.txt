@@ -1,0 +1,8 @@
+Textures from ambientCG.com, licensed under CC0 1.0 Universal.
+osb: Chipboard005
+brick: Bricks085
+plaster: Plaster001
+concrete: Concrete034
+grass: Grass004
+timber: Planks021
+planken: WoodFloor044

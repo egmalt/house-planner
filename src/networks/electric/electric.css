@@ -1,0 +1,178 @@
+.el-tool {
+  z-index: var(--z-popover);
+  flex-wrap: wrap;
+  max-width: 460px;
+}
+
+.el-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.el-field > span:first-child {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.el-field .select {
+  max-width: 170px;
+}
+
+.el-num {
+  width: 110px;
+}
+
+.el-text {
+  width: 170px;
+}
+
+.el-pair {
+  display: inline-flex;
+  gap: var(--space-1);
+}
+
+.el-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.el-table td {
+  vertical-align: top;
+}
+
+.el-row {
+  cursor: pointer;
+}
+
+.el-row:hover,
+.el-row--active {
+  background: var(--surface-2);
+}
+
+.el-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 6px;
+  border-radius: var(--radius-pill);
+  vertical-align: 1px;
+}
+
+.el-sub {
+  font-size: var(--text-xs);
+}
+
+.el-edit {
+  margin-top: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.el-edit .inspector__actions {
+  margin-top: var(--space-2);
+}
+
+.el-add {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.el-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-2);
+}
+
+.el-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-2);
+  align-items: baseline;
+  padding: 6px 0;
+  font-size: var(--text-sm);
+  border-bottom: 1px solid var(--line);
+}
+
+.el-item__name a {
+  color: inherit;
+}
+
+.el-item__qty,
+.el-item__sum {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.el-item__sum {
+  min-width: 72px;
+}
+
+.el-warnings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-2);
+}
+
+.el-warning {
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: var(--radius-xs);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--text-sm);
+  text-align: left;
+  cursor: pointer;
+}
+
+.el-warning--error {
+  background: var(--danger-soft);
+}
+
+.el-warning--warn {
+  background: var(--warn-soft);
+}
+
+.el-warning--info {
+  background: var(--surface-2);
+  color: var(--ink-2);
+}
+
+.el-howto summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.el-howto ol {
+  margin: var(--space-2) 0;
+  padding-left: 18px;
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+
+.el-howto li + li {
+  margin-top: 4px;
+}
+
+.el-howto .muted {
+  font-size: var(--text-xs);
+  line-height: 1.45;
+}
+
+@media (max-width: 760px) {
+  .el-tool {
+    max-width: calc(100vw - 16px);
+  }
+}
+
+.el-group-select {
+  max-width: 160px;
+}
