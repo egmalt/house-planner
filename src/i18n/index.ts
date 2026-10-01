@@ -46,7 +46,8 @@ void i18n
     saveMissing: import.meta.env.DEV,
     missingKeyHandler: (_lngs, ns, key) => console.warn(`[i18n] missing key ${ns}:${key}`),
     detection: {
-      order: ['localStorage', 'cookie', 'navigator'],
+      order: ['querystring', 'localStorage', 'cookie'],
+      lookupQuerystring: 'lang',
       lookupLocalStorage: 'lang',
       lookupCookie: 'lang',
       caches: ['localStorage', 'cookie'],

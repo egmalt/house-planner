@@ -76,7 +76,7 @@ Mostly. Run it locally (Docker or `php -S`) and the editor, 3D, networks and est
 
 ### Which interface languages are there?
 
-English and Russian. The language follows the browser and can be switched in the "⋯" menu → Language; the choice is remembered. Translations to other languages are welcome: strings live in `src/i18n/locales/<language>/`, see [CONTRIBUTING.md](../../../CONTRIBUTING.md).
+English and Russian. English is the default regardless of the browser language; switch in the "⋯" menu → Language (the choice is remembered) or link with `?lang=ru` / `?lang=en`. Translations to other languages are welcome: strings live in `src/i18n/locales/<language>/`, see [CONTRIBUTING.md](../../../CONTRIBUTING.md).
 
 ### What is the license?
 

@@ -2,7 +2,7 @@
 
 **English** | [Русский](../ru/usage.md)
 
-The interface is in English and Russian; the language follows the browser and can be switched in "⋯" → Language. Labels below are the English ones.
+The interface is in English and Russian; English is the default (the browser language is ignored); switch in "⋯" → Language or open the app with `?lang=ru`. Labels below are the English ones.
 
 ## Layout
 

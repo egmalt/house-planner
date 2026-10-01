@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed
+
+- The UI defaults to English; the browser language is no longer used. Russian is picked only explicitly via "⋯" → Language or `?lang=ru`. PHP messages follow the `lang` cookie, otherwise English.
+
 ## [0.1.0] - 2026-10-01
 
 Initial public release.
